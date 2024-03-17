@@ -32,10 +32,6 @@ public class TransferSalaryController {
     public ResponseEntity<Object> addMoneyToCompanyAccount(@PathVariable Integer accountId, @RequestBody AddMoneyRequestModel addMoneyRequestModel, ModelAndView model) {
         return transferSalaryService.addMoneyToCompanyAccount(accountId,addMoneyRequestModel);
     }
-//    @PostMapping("/lowestGradeBasicSalary")
-//    public ResponseEntity<Object> setLowestGradeBasicSalary(@RequestBody double lowestGradeBasicSalary) {
-//        return transferSalaryService.lowestGradeBasicSalary(lowestGradeBasicSalary);
-//    }
     @GetMapping("/viewRemainingBalanceAndTotalPaidSalary/{accountId}")
     public Map<String,Double>totalPaidSalaryAndRemainingBalance(@PathVariable Integer accountId) {
         return transferSalaryService.totalPaidSalaryAndRemainingBalance(accountId);

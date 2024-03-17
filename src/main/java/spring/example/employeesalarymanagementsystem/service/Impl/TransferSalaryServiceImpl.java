@@ -67,7 +67,7 @@ public class TransferSalaryServiceImpl implements TransferSalaryService {
     }
 
     private boolean creditSalaryToEmployeeAccount(EmployeeEntity employee, double totalSalary) {
-        if(employee != null && employee.getGrade()==6){
+        if(employee != null){
             double newBalance = employee.getBankAccount() +totalSalary;
             employee.setBankAccount(newBalance);
             employeeRepository.save(employee);
@@ -109,7 +109,6 @@ public class TransferSalaryServiceImpl implements TransferSalaryService {
         AccountEntity companyAccount = accountRepository.findByAccountId(accountId);
         if(companyAccount == null){
            throw new IllegalArgumentException("Company account with ID"+ accountId + "not found");
-//           return new RuntimeException("Company Account is Not Found",);
         }
         Map<String,Double> result = new HashMap<>();
         result.put("totalPaidSalary",totalPaidSalary);
