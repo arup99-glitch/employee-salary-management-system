@@ -99,13 +99,6 @@ public class TransferSalaryServiceImpl implements TransferSalaryService {
         }
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
-
-//    @Override
-//    public ResponseEntity<Object> lowestGradeBasicSalary(double lowestGradeBasicSalary) {
-//        this.lowestGradeBasicSalary = lowestGradeBasicSalary;
-//        return new ResponseEntity<>("Lowest grade basic salary has been updated successfully", HttpStatus.OK);
-//    }
-
     @Override
     public Map<String,Double> totalPaidSalaryAndRemainingBalance(Integer accountId) {
         List<EmployeeEntity>employees = employeeRepository.findAll();
